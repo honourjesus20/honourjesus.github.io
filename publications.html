@@ -53,7 +53,7 @@
 
       <div class="pub-card">
         <div class="pub-meta">
-          <span class="venue wiml">WiML @ ICML 2025 — Poster</span>
+          <span class="venue wiml">WiML @ ICML 2026 — Poster</span>
         </div>
         <p class="pub-title">Why Large Language Models Fail for Hausa Educational Content: Cascading Errors From Translation to Speech to Comprehension</p>
         <p class="pub-authors">Bezaleel, H.-J., Jim, P., &amp; Daudu, M. — ML Collective, UniCBT (2025)</p>
@@ -109,11 +109,20 @@
         <div class="pub-meta">
           <span class="venue preprint">Manuscript · Under Review</span>
         </div>
-        <p class="pub-title">Beyond Translation: Typology-Aware Speech Adaptation for Hausa in High-Stakes Digital Assessment</p>
+        <p class="pub-title">HausaVoicePQ: A Validated Multimodal Dataset for Hausa Educational Question Answering. </p>
         <p class="pub-authors">Bezaleel, H.-J.</p>
         <p class="pub-desc">
-          Proposes typology-aware adaptation strategies for deploying speech models in Hausa educational assessments,
-          addressing the unique phonological and tonal structure of the language.
+          Proposes a multimodal hausa educational dataset
+          Designed and implemented a four-stage cascaded NLP pipeline: fine-tuned NLLB-200-distilled-600M for English→Hausa machine translation (trained on a single Tesla GPU under real compute constraints), 
+          a fine-tuned VITS model for Hausa TTS synthesis, Whisper-large-hausa for ASR, and Llama-3.3-70B for downstream transcript error correction);
+          built automated data pipelines for dataset creation, preprocessing, and bilingual text–audio alignment.
+          Developed evaluation and benchmarking workflows using WER, CER, and MOS, validating performance on the HausaPQ-Speech corpus (1,000 human-validated samples); 
+          identified critical performance gaps, including WER variance (68–92%) and 100% tonal error rate in baseline ASR models (Whisper, Wav2Vec2).
+          Conducted systematic failure-mode analysis across the pipeline, uncovering key issues such as semantic omission in MT, lexical diversity collapse (TTR: 17.3% → 13.9%), 
+          LLM hallucination, and reasoning degradation (82% → <30% accuracy) in downstream tasks.
+          Optimised pipeline performance for real-world multilingual deployment, replacing closed-source MT with fine-tuned NLLB-200 for reproducibility 
+          and implementing structural normalisation and inference stabilisation techniques in compute-constrained environments.
+
         </p>
       </div>
 
